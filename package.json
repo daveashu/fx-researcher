@@ -1,0 +1,17 @@
+{
+  "name": "fx-signal-generator",
+  "version": "1.0.0",
+  "description": "Multi-agent FX trading signal generator — runs daily at 8am JST",
+  "type": "module",
+  "main": "orchestrator.js",
+  "scripts": {
+    "start": "node orchestrator.js",
+    "run:pair": "node orchestrator.js --pair"
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.2",
+    "dotenv": "^16.4.5",
+    "nodemailer": "^6.9.13",
+    "node-cron": "^3.0.3"
+  }
+}
