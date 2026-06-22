@@ -3,7 +3,7 @@
 //  Scans yesterday's news and today's economic calendar for a pair
 // ─────────────────────────────────────────────────────────────
 
-import { callClaude, log } from "./claude_client.js";
+import { callLLM, log } from "./client.js";
 
 const SYSTEM = `You are an FX news analyst specialising in impact assessment of macroeconomic events.
 Your job is to identify and score all market-moving news from the last 24 hours for a currency pair.
@@ -34,7 +34,7 @@ Find:
 Return a structured markdown report as per your instructions.
 `;
 
-  const result = await callClaude({
+  const result = await callLLM({
     systemPrompt: SYSTEM,
     userPrompt,
     useWebSearch: true,

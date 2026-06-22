@@ -10,7 +10,7 @@
 import "dotenv/config";
 import cron from "node-cron";
 import { execSync } from "child_process";
-import { log } from "./agents/claude_client.js";
+import { log } from "./src/agents/client.js";
 
 // 08:00 JST = 23:00 UTC (previous day)
 // Cron syntax: minute hour * * day-of-week (0-4 = Mon-Fri)

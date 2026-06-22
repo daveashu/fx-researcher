@@ -3,7 +3,7 @@
 //  Runs all configured strategies against analyst team data
 // ─────────────────────────────────────────────────────────────
 
-import { callClaude, log } from "./claude_client.js";
+import { callLLM, log } from "./client.js";
 import { CONFIG } from "../config/settings.js";
 
 // Dynamically import strategy modules
@@ -38,7 +38,7 @@ export async function runStrategyAnalyst(pair, analystOutputs) {
   for (const [name, mod] of Object.entries(strategies)) {
     log("Strategy Analyst", `  → Evaluating ${mod.STRATEGY_NAME} on ${pair}...`);
 
-    const result = await callClaude({
+    const result = await callLLM({
       systemPrompt: mod.SYSTEM_PROMPT,
       userPrompt: mod.buildUserPrompt(pair, analystData),
       useWebSearch: false,   // strategy runs on analyst data only, no extra search

@@ -3,7 +3,7 @@
 //  Checks public FX community sites for prevailing trader sentiment & trends
 // ─────────────────────────────────────────────────────────────
 
-import { callClaude, log } from "./claude_client.js";
+import { callLLM, log } from "./client.js";
 
 const SYSTEM = `You are an FX trend and sentiment analyst. Your job is to gauge the prevailing
 market trend and retail/institutional sentiment for a currency pair by searching public sources.
@@ -40,7 +40,7 @@ Search for:
 Synthesise into a structured markdown trend report as per your instructions.
 `;
 
-  const result = await callClaude({
+  const result = await callLLM({
     systemPrompt: SYSTEM,
     userPrompt,
     useWebSearch: true,

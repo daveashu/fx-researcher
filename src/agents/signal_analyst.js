@@ -3,7 +3,7 @@
 //  Vets all strategy outputs and generates final BUY/SELL/HOLD signals
 // ─────────────────────────────────────────────────────────────
 
-import { callClaude, log } from "./claude_client.js";
+import { callLLM, log } from "./client.js";
 
 const SYSTEM = `You are the Chief Signal Officer of an institutional FX desk.
 Your job is to receive strategy analysis from multiple strategy analysts and make the FINAL
@@ -63,7 +63,7 @@ Apply your vetting criteria strictly. If strategies conflict or quality is poor 
 Output in the exact table format specified in your instructions.
 `;
 
-  const result = await callClaude({
+  const result = await callLLM({
     systemPrompt: SYSTEM,
     userPrompt,
     useWebSearch: false,

@@ -3,7 +3,7 @@
 //  Fetches latest price and derives key levels from 3-year history
 // ─────────────────────────────────────────────────────────────
 
-import { callClaude, log } from "./claude_client.js";
+import { callLLM, log } from "./client.js";
 
 const SYSTEM = `You are an FX price analyst specialising in quantitative price structure.
 Your job is to obtain the latest price for a currency pair and derive key structural levels
@@ -44,7 +44,7 @@ Return a structured markdown price report as per your instructions.
 State the exact source URL and time for all live data.
 `;
 
-  const result = await callClaude({
+  const result = await callLLM({
     systemPrompt: SYSTEM,
     userPrompt,
     useWebSearch: true,
