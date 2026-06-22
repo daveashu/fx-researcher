@@ -11,22 +11,22 @@
 
 import "dotenv/config";
 import { CONFIG } from "./src/config/settings.js";
-import { log } from "./agents/claude_client.js";
+import { log } from "./src/agents/client.js";
 
 // Team 1 — Analyst Team
-import { runMarketAnalyst }  from "./agents/market_analyst.js";
-import { runNewsAnalyst }    from "./agents/news_analyst.js";
-import { runTrendAnalyst }   from "./agents/trend_analyst.js";
-import { runPriceAnalyst }   from "./agents/price_analyst.js";
+import { runMarketAnalyst }  from "./src/agents/market_analyst.js";
+import { runNewsAnalyst }    from "./src/agents/news_analyst.js";
+import { runTrendAnalyst }   from "./src/agents/trend_analyst.js";
+import { runPriceAnalyst }   from "./src/agents/price_analyst.js";
 
 // Team 2 — Strategy Team
-import { runStrategyAnalyst } from "./agents/strategy_analyst.js";
+import { runStrategyAnalyst } from "./src/agents/strategy_analyst.js";
 
 // Team 3 — Signal Team
-import { runSignalAnalyst } from "./agents/signal_analyst.js";
+import { runSignalAnalyst } from "./src/agents/signal_analyst.js";
 
 // Team 4 — Notification Team
-import { runNotificationAnalyst } from "./agents/notification_analyst.js";
+import { runNotificationAnalyst } from "./src/agents/notification_analyst.js";
 
 // ─────────────────────────────────────────────────────────────
 //  Parse CLI args

@@ -3,7 +3,7 @@
 //  Deep 1-day macro & technical market analysis for a currency pair
 // ─────────────────────────────────────────────────────────────
 
-import { callClaude, log } from "./claude_client.js";
+import { callLLM, log } from "./client.js";
 
 const SYSTEM = `You are a senior FX market analyst at a top-tier institutional desk.
 Your job is to produce a concise but comprehensive 1-day market analysis for a given currency pair.
@@ -28,7 +28,7 @@ Return a structured markdown report covering all 6 sections in your system promp
 Be specific — include actual price levels and percentage figures where possible.
 `;
 
-  const result = await callClaude({
+  const result = await callLLM({
     systemPrompt: SYSTEM,
     userPrompt,
     useWebSearch: true,

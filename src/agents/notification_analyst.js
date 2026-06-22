@@ -4,7 +4,7 @@
 // ─────────────────────────────────────────────────────────────
 
 import { CONFIG } from "../config/settings.js";
-import { log } from "./claude_client.js";
+import { log } from "./client.js";
 import fs from "fs";
 import path from "path";
 
